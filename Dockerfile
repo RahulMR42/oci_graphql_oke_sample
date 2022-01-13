@@ -3,6 +3,8 @@ FROM python:3.9
 WORKDIR /code
 COPY . .
 
+RUN cd fastapi-sqlalchemy
+
 RUN pip install --no-cache-dir poetry && \
     poetry install && \
     poetry run alembic upgrade head 

@@ -3,7 +3,7 @@ FROM python:3.9
 WORKDIR /code
 COPY . .
 
-RUN cd fastapi-sqlalchemy
+WORKDIR /code/fastapi-sqlalchemy
 
 RUN pip install --no-cache-dir poetry && \
     poetry install && \

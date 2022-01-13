@@ -1,3 +1,14 @@
-# examples
+Sample illustration of GRAPHQL with FASTAPI & STRABERRY and deploy it over OCI OKE
 
-Example on how to use Strawberry with OKE - To make more updates...
+-------
+
+- Deployment manifest - [deployment_spec.yaml](deployment_spec.yaml)
+
+- Dockerfile - [Dockerfile](Dockerfile)
+
+
+
+
+
+
+Credits for the base code - https://github.com/strawberry-graphql/examples/tree/main/fastapi-sqlalchemy 

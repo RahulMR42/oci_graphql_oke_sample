@@ -6,31 +6,31 @@ metadata:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: java-micronaut-deployment
+  name: fastapi-straberry-deployment
   namespace: ${namespace}
 spec:
   selector:
     matchLabels:
-      app: java-micronaut
+      app: fastapi-straberry
   replicas: 3
   template:
     metadata:
       labels:
-        app: java-micronaut
+        app: fastapi-straberry
     spec:
       containers:
-        - name: java-micronaut
+        - name: fastapi-straberry
           # enter the path to your image, be sure to include the correct region prefix
           image: us-ashburn-1.ocir.io/fahdabidiroottenancy/rahul/mr-devops/graphql-oke-sample:${BUILDRUN_HASH}
           imagePullPolicy: Always
           ports:
-            - containerPort: 8080
+            - containerPort: 80
               protocol: TCP
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: java-micronaut-service
+  name: fastapi-straberry-service
   namespace: ${namespace}
   annotations: 
     service.beta.kubernetes.io/oci-load-balancer-shape: "10Mbps"
@@ -39,6 +39,6 @@ spec:
   ports:
     - port: 80
       protocol: TCP
-      targetPort: 8080
+      targetPort: 80
   selector:
-    app: java-micronaut
+    app: fastapi-straberry
